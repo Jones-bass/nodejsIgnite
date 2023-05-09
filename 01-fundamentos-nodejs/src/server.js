@@ -1,8 +1,8 @@
 import http from 'node:http'
+
 import { json } from './middlewares/json.js'
-import { Database } from './database.js'
-import { randomUUID } from 'node:crypto'
 import { routes } from './routes.js'
+import { extractQueryParams } from './utils/extract-query-params.js'
 
 // - Criar usuários
 // - Listagem usuários
@@ -43,8 +43,10 @@ const server = http.createServer(async (req, res) => {
   if (route) {
     const routeParams = req.url.match(route.path)
 
-    console.log(routeParams)
+    const { query, ...params } = routeParams.groups
 
+    req.params = params
+    req.query = query ? extractQueryParams(query) : {}
     return route.handler(req, res)
   }
 

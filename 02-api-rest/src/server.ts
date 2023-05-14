@@ -1,9 +1,32 @@
+import Fastify from 'fastify'
 
-import { app } from './app'
-import { env } from './env'
+import cookie from '@fastify/cookie'
+import { fastifyCors } from '@fastify/cors'
 
-app.listen({
-  port: env.PORT,
-}).then(() => {
-  console.log('🚀 Server started on port 3333!')
-})
+import { transactionsRoutes } from './routes/transactions'
+
+async function bootstrap() {
+  const fastify = Fastify({
+    logger: true,
+  })
+
+  await fastify.register(fastifyCors, {
+    origin: true,
+  })
+
+  await fastify.register(cookie)
+
+  await fastify.register(transactionsRoutes, {
+    prefix: 'transactions',
+  })
+
+  fastify
+    .listen({
+      port: 3333,
+    })
+    .then(() => {
+      console.log('🚀 Server started on port 3333')
+    })
+}
+
+bootstrap()

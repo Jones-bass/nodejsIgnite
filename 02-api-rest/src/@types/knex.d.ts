@@ -6,6 +6,7 @@ import { Knex } from 'knex'
 declare module 'knex/types/tables' {
   export interface Tables {
     transactions: {
+      type: string | undefined
       id: string
       title: string
       amount: number

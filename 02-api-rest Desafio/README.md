@@ -1,11 +1,11 @@
 <h1 align="center">
-    <img alt="Gobarber" src="https://www.ovhcloud.com/sites/default/files/styles/large_screens_1x/public/2022-05/whatis_rest_api.png" width="350px" />
+    <img alt="Gobarber" src="https://repository-images.githubusercontent.com/341683746/42e1ab80-77af-11eb-9e07-47f9e46b3e6e" width="550px" />
 </h1>
 
 
-**API-REST**: são amplamente utilizadas em aplicativos web e móveis para permitir que diferentes sistemas se comuniquem e compartilhem dados. Elas são conhecidas por serem escaláveis, flexíveis e fáceis de usar, o que as torna uma escolha popular para desenvolvedores que precisam criar interfaces de programação de aplicativos eficientes e seguras.
+**Fastify**: é um framework web leve e eficiente para Node.js, conhecido por seu alto desempenho e baixa latência. Ele oferece modularidade, um sistema de plugin flexível, manipulação de erros avançada e validação de entrada embutida. O Fastify é amplamente utilizado por desenvolvedores que buscam construir aplicativos web rápidos, escaláveis e de alta qualidade.
 
-**Fastify**: é uma excelente escolha para desenvolvedores que precisam de um framework Node.js rápido, extensível e altamente personalizável para construção de APIs web e serviços em rede.
+É uma excelente escolha para desenvolvedores que precisam de um framework Node.js rápido, extensível e altamente personalizável para construção de APIs web e serviços em rede.
 
 ## Iniciando back-end
 ```bash

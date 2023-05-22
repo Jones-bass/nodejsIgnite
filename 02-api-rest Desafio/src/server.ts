@@ -1,16 +1,19 @@
 import Fastify from 'fastify'
 
-import { fastifyCors } from '@fastify/cors'
+import cookie from '@fastify/cookie'
 
 import { dietRoutes } from './routes/diet'
+import { usersRoutes } from './routes/users'
 
 async function bootstrap() {
   const fastify = Fastify({
     logger: true,
   })
 
-  await fastify.register(fastifyCors, {
-    origin: true,
+  await fastify.register(cookie)
+
+  await fastify.register(usersRoutes, {
+    prefix: '/users',
   })
 
   await fastify.register(dietRoutes, {
